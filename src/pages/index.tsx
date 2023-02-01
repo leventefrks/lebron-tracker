@@ -2,6 +2,7 @@ import { type NextPage } from 'next';
 import { JSDOM } from 'jsdom';
 import Head from 'next/head';
 import { NextApiRequest, NextApiResponse } from 'next';
+import Social from '../components/Social';
 
 const { NEXT_BASE_URL: baseUrl } = process.env;
 
@@ -9,7 +10,7 @@ const Home: NextPage = ({ totalScores, remainingScore, remainingMatches }) => {
   return (
     <>
       <Head>
-        <title>LeBron tracker</title>
+        <title>The Bron tracker</title>
         <meta name="description" content="The Bron tracker" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -35,6 +36,7 @@ const Home: NextPage = ({ totalScores, remainingScore, remainingMatches }) => {
               </div>
             </div>
           </div>
+          <Social />
         </div>
       </main>
     </>
