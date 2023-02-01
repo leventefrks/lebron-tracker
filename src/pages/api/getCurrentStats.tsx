@@ -1,13 +1,12 @@
 import { JSDOM } from 'jsdom';
 import { NextApiRequest } from 'next';
 
+const { NEXT_BASE_URL: baseUrl } = process.env;
+
 const getCurrentStats = async (req: NextApiRequest, res: NextApiResponse) => {
-  const result = await fetch(
-    'https://www.espn.com/espn/feature/story/_/id/34584960/when-lebron-james-break-nba-career-points-record'
-  );
+  const result = await fetch(baseUrl);
   const html = await result.text();
 
-  console.log(html);
   const dom = new JSDOM(html);
   const document = dom.window.document;
 
