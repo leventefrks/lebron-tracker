@@ -20,18 +20,18 @@ const Home: NextPage = ({ items }) => {
       </Head>
       <main className="flex min-h-screen w-full min-w-[320] items-center justify-center">
         <div className="mx-auto min-h-full w-full max-w-4xl flex-col">
-          <h1 className="text-center text-5xl text-gray-600">
+          <h1 className="mb-2 text-center text-5xl text-gray-800">
             The Bron Tracker
           </h1>
           <Image
             className="mx-auto block"
             src="/lebron-james.webp"
-            alt="LeBron James"
-            width={500}
-            height={500}
+            alt="LeBron James vs Kareem Abdul Jabbar"
+            width={350}
+            height={350}
           />
-          <ul className="grid grid-cols-1 gap-1 text-center text-gray-600 sm:grid-cols-3">
-            {items.map((item, index) => (
+          <ul className="grid grid-cols-1 gap-1 text-center text-gray-800 sm:grid-cols-3">
+            {items.map((item: object, index: string) => (
               <Scores key={index} item={item} />
             ))}
           </ul>
