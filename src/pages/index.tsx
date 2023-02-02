@@ -14,7 +14,7 @@ const Home: NextPage = ({ items }) => {
   return (
     <>
       <Head>
-        <title>the Bron tracker</title>
+        <title>👨🏿‍🦲 the Bron tracker</title>
         <meta name="description" content="The Bron tracker" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
