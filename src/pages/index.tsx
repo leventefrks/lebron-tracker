@@ -1,12 +1,14 @@
 import type { NextApiRequest, NextApiResponse, NextPage } from 'next';
 import { JSDOM } from 'jsdom';
 import Head from 'next/head';
+import Image from 'next/image';
+import { KAREEM_POINTS } from '../constants';
+import Title from '../components/Title';
 import ScoresGrid from '../components/ScoresGrid';
 import Social from '../components/Social';
 import Confetti from 'react-confetti';
-import { useState } from 'react';
-import Image from 'next/image';
-import useWindowSize from 'react-use/lib/useWindowSize';
+import useWindowSize from 'reac t-use/lib/useWindowSize';
+import { BiCoffeeTogo } from 'react-icons/bi';
 
 const { NEXT_BASE_URL: baseUrl } = process.env;
 
@@ -14,19 +16,26 @@ const Home: NextPage = ({ items }) => {
   return (
     <>
       <Head>
-        <title>👨🏿‍🦲 the Bron tracker</title>
+        <title>the Bron tracker</title>
         <meta name="description" content="The Bron tracker" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen w-full min-w-[320] items-center justify-center">
         <div className="mx-auto min-h-full w-full max-w-4xl flex-col">
-          <h1 className="mb-2 text-center text-5xl text-gray-800">
+          <Title>
             <span className="text-6xl font-black">Bron</span> tracker
-          </h1>
+          </Title>
+          <a
+            href="https://www.buymeacoffee.com/leventefarkas"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BiCoffeeTogo className="absolute top-6 right-6 h-8 w-8 transform text-gray-800 duration-200 hover:scale-110" />
+          </a>
           <Image
             className="mx-auto block"
             src="/lebron-james.webp"
-            alt="LeBron James vs Kareem Abdul Jabbar"
+            alt="LeBron James"
             width={350}
             height={350}
           />
