@@ -14,14 +14,14 @@ const Home: NextPage = ({ items }) => {
   return (
     <>
       <Head>
-        <title>The Bron tracker</title>
+        <title>the Bron tracker</title>
         <meta name="description" content="The Bron tracker" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen w-full min-w-[320] items-center justify-center">
         <div className="mx-auto min-h-full w-full max-w-4xl flex-col">
           <h1 className="mb-2 text-center text-5xl text-gray-800">
-            The Bron Tracker
+            <span className="text-6xl font-black">Bron</span> tracker
           </h1>
           <Image
             className="mx-auto block"

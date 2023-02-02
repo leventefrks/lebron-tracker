@@ -9,4 +9,4 @@ When will break LeBron James Kareem Abdul Jabbar's record?
 - [Tailwind Autoprefixer](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [React CountUp](https://www.npmjs.com/package/react-countup)
-- [Typescript]
+- [Typescript](https://www.typescriptlang.org/docs/)
