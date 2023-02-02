@@ -1,4 +1,4 @@
-# The Bron Tracker
+# Bron tracker
 
 When will break LeBron James Kareem Abdul Jabbar's record?
 
