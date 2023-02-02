@@ -36,8 +36,8 @@ const Home: NextPage = ({ items }) => {
             className="mx-auto block"
             src="/lebron-james.webp"
             alt="LeBron James"
-            width={350}
-            height={350}
+            width={340}
+            height={340}
           />
           <ScoresGrid items={items} />
         </div>
