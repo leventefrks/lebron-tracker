@@ -1,6 +1,16 @@
 import CountUp from 'react-countup';
+import { KAREEM_POINTS } from '../constants';
 
-const Scores = ({ item }) => {
+interface Item {
+  title: string;
+  number: string;
+}
+
+interface ScoresProps {
+  item: Item;
+}
+
+const Scores: React.FC<ScoresProps> = ({ item }) => {
   const number = Number(item.number.replace(',', ''));
 
   return (

@@ -1,9 +1,17 @@
 import Scores from './Scores';
 
-const ScoresGrid = ({ items }) => {
+interface Item {
+  [key: string]: any;
+}
+
+interface ScoresGridProps {
+  items: Item[];
+}
+
+const ScoresGrid: React.FC<ScoresGridProps> = ({ items }) => {
   return (
-    <ul className="grid grid-cols-1 gap-1 text-center text-gray-800 sm:grid-cols-3">
-      {items.map((item: object, index: string) => (
+    <ul className="mx-auto grid grid-cols-1 gap-1 rounded-md bg-purple-800 py-4 text-center text-zinc-50 sm:grid-cols-3 sm:py-0 md:max-w-3xl">
+      {items.map((item: Item, index: string) => (
         <Scores key={index} item={item} />
       ))}
     </ul>
