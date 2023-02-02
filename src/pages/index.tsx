@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse, NextPage } from 'next';
 import { JSDOM } from 'jsdom';
 import Head from 'next/head';
-import Scores from '../components/Scores';
+import ScoresGrid from '../components/ScoresGrid';
 import Social from '../components/Social';
-// import Confetti from 'react-confetti';
+import Confetti from 'react-confetti';
 import { useState } from 'react';
 import Image from 'next/image';
 import useWindowSize from 'react-use/lib/useWindowSize';
@@ -30,11 +30,7 @@ const Home: NextPage = ({ items }) => {
             width={350}
             height={350}
           />
-          <ul className="grid grid-cols-1 gap-1 text-center text-gray-800 sm:grid-cols-3">
-            {items.map((item: object, index: string) => (
-              <Scores key={index} item={item} />
-            ))}
-          </ul>
+          <ScoresGrid items={items} />
         </div>
         <Social />
       </main>
