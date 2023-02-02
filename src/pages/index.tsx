@@ -1,12 +1,15 @@
-import { type NextPage } from 'next';
+import type { NextApiRequest, NextApiResponse, NextPage } from 'next';
 import { JSDOM } from 'jsdom';
 import Head from 'next/head';
-import { NextApiRequest, NextApiResponse } from 'next';
+import Scores from '../components/Scores';
 import Social from '../components/Social';
+// import Confetti from 'react-confetti';
+import { useState } from 'react';
+import useWindowSize from 'react-use/lib/useWindowSize';
 
 const { NEXT_BASE_URL: baseUrl } = process.env;
 
-const Home: NextPage = ({ totalScores, remainingScore, remainingMatches }) => {
+const Home: NextPage = ({ items }) => {
   return (
     <>
       <Head>
@@ -14,30 +17,16 @@ const Home: NextPage = ({ totalScores, remainingScore, remainingMatches }) => {
         <meta name="description" content="The Bron tracker" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="min-h-screen w-full min-w-[320] bg-indigo-800">
-        <div className="mx-auto h-full w-full max-w-4xl bg-cover bg-center bg-no-repeat">
+      <main className="flex min-h-screen w-full min-w-[320] items-center justify-center bg-purple-800">
+        <div className="mx-auto min-h-full w-full max-w-4xl flex-col">
           <h1 className="text-center text-5xl text-white">The Bron Tracker</h1>
-
-          <div className="grid grid-cols-1 gap-2 text-center text-white sm:grid-cols-3">
-            <div className="flex flex-col py-5">
-              <div className="text-xl uppercase">total</div>
-              <span className="text-3xl">{totalScores}</span>
-            </div>
-
-            <div className="flex flex-col py-5">
-              <div className="text-xl uppercase">points needed</div>
-              <span className="text-3xl font-black">{remainingScore}</span>
-            </div>
-
-            <div className="flex flex-col py-5">
-              <div className="text-xl uppercase">
-                <div className="text-xl uppercase">projected matches</div>
-                <span className="text-3xl font-black">{remainingMatches}</span>
-              </div>
-            </div>
-          </div>
-          <Social />
+          <ul className="grid grid-cols-1 gap-2 text-center text-white sm:grid-cols-3">
+            {items.map((item, index) => (
+              <Scores key={index} item={item} />
+            ))}
+          </ul>
         </div>
+        <Social />
       </main>
     </>
   );
@@ -56,15 +45,15 @@ export const getServerSideProps = async ({
   const dom = new JSDOM(html);
   const document = dom.window.document;
 
-  const totalScores = document.querySelector(
+  const totalPoints = document.querySelector(
     `.stat__block .sub-title`
   )?.textContent;
 
-  const remainingScore = document.querySelector(
+  const remainingPoints = document.querySelector(
     `.stat__block.info:nth-of-type(2) .stat`
   )?.textContent;
 
-  const remainingMatches = document.querySelector(
+  const remainingGames = document.querySelector(
     `.stat__block.info:nth-of-type(3) .stat`
   )?.textContent;
 
@@ -73,11 +62,24 @@ export const getServerSideProps = async ({
     'public, s-maxage=10, stale-while-revalidate=59'
   );
 
+  const items = [
+    {
+      title: 'total',
+      number: totalPoints,
+    },
+    {
+      title: 'points needed',
+      number: remainingPoints,
+    },
+    {
+      title: 'projected games',
+      number: remainingGames,
+    },
+  ];
+
   return {
     props: {
-      remainingScore,
-      remainingMatches,
-      totalScores,
+      items,
     },
   };
 };
