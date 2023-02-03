@@ -12,7 +12,7 @@ Find the easter egg. Come a little bit closer and I tell you a secret. The word 
 
 ## Environment variables
 
--NEXT_PUBLIC_GA_MEASUREMENT_ID - ~~secret~~ Google Analytics Measurement Id
+- NEXT_PUBLIC_GA_MEASUREMENT_ID - ~~secret~~ Google Analytics Measurement Id
 
 - NEXT_BASE_URL - ~~secret~~ The site that I'm scraping for live data
 
