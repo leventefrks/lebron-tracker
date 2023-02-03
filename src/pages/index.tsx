@@ -60,9 +60,12 @@ interface Item {
   number: number;
 }
 
-export const getServerSideProps: GetServerSideProps<{
-  items: Item[];
-}> = async ({ res }: { req: NextApiRequest; res: NextApiResponse }) => {
+export const getServerSideProps: GetServerSideProps<> = async ({
+  res,
+}: {
+  req: NextApiRequest;
+  res: NextApiResponse;
+}) => {
   const result = await fetch(baseUrl);
   const html = await result.text();
 
