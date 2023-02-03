@@ -4,6 +4,7 @@ interface Item {
   title: string;
   number: number;
 }
+
 interface ScoresGridProps {
   items: Item[];
 }
