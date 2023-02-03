@@ -2,7 +2,7 @@ import CountUp from 'react-countup';
 
 interface Item {
   title: string;
-  number: number;
+  stat: number;
 }
 
 interface ScoresProps {
@@ -14,8 +14,8 @@ const Scores: React.FC<ScoresProps> = ({ item }) => {
     <li className="py-2 sm:py-5">
       <div className="text-xl uppercase">{item.title}</div>
       <span className="text-4xl font-black tracking-wider">
-        <CountUp start={0} end={item.number}>
-          {({ countUpRef }) => <span ref={countUpRef}>{item.number}</span>}
+        <CountUp start={0} end={item.stat}>
+          {({ countUpRef }) => <span ref={countUpRef}>{item.stat}</span>}
         </CountUp>
       </span>
     </li>

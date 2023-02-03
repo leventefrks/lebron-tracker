@@ -2,7 +2,7 @@ import Scores from './Scores';
 
 interface Item {
   title: string;
-  number: number;
+  stat: number;
 }
 
 interface ScoresGridProps {

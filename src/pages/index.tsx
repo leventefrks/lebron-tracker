@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({ items }) => {
 
 interface Item {
   title: string;
-  number: string;
+  stat: number;
 }
 
 export const getServerSideProps = async ({
@@ -98,15 +98,15 @@ export const getServerSideProps = async ({
   const items: Item[] = [
     {
       title: 'total',
-      number: numberCast(totalPoints),
+      stat: numberCast(totalPoints),
     },
     {
       title: 'points needed',
-      number: numberCast(remainingPoints),
+      stat: numberCast(remainingPoints),
     },
     {
       title: 'projected games',
-      number: numberCast(remainingGames),
+      stat: numberCast(remainingGames),
     },
   ];
 
