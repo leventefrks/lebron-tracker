@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Title from '../components/Title';
 import ScoresGrid from '../components/ScoresGrid';
 import Social from '../components/Social';
-// import Confetti from 'react-confetti';
-// import useWindowSize from 'react-use/lib/useWindowSize';
+import { KAREEM_POINTS } from '../constants';
+import Confetti from 'react-confetti';
+import useWindowSize from 'react-use/lib/useWindowSize';
 import { BiCoffeeTogo } from 'react-icons/bi';
 import { useState } from 'react';
 
@@ -39,6 +40,8 @@ export const getServerSideProps = async ({ req, res }) => {
     'public, s-maxage=10, stale-while-revalidate=59'
   );
 
+  const isBreakRecord = KAREEM_POINTS < numberCast(remainingPoints);
+
   const initialProps = [
     {
       title: 'total points',
@@ -57,6 +60,7 @@ export const getServerSideProps = async ({ req, res }) => {
   return {
     props: {
       initialProps,
+      isBreakRecord,
     },
   };
 };
@@ -65,8 +69,7 @@ const numberCast = value => Number(value.replace(',', '')) || 0;
 
 const Home = ({ initialProps }) => {
   const [items, setItems] = useState(initialProps);
-
-  // console.log('client', initialProps);
+  const { width, height } = useWindowSize();
 
   return (
     <>
@@ -96,6 +99,7 @@ const Home = ({ initialProps }) => {
           />
           <ScoresGrid items={items} />
         </div>
+        {true && <Confetti width={width} height={height} />}
         <Social />
       </main>
     </>
