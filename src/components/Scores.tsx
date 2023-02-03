@@ -10,8 +10,12 @@ interface ScoresProps {
 }
 
 const Scores: React.FC<ScoresProps> = ({ item }) => {
-  const numberCast = (value: { stat: string }): number =>
-    Number(value.stat.replace(',', '')) || 0;
+  const numberCast = ({ stat }: { stat: string | null | undefined }) => {
+    if (stat === null || stat === undefined) {
+      return 0;
+    }
+    return Number(stat.replace(',', '')) || '';
+  };
 
   const stat: number = numberCast(item);
 

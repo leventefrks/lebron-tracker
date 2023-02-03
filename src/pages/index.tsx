@@ -58,7 +58,7 @@ const Home: NextPage<Props> = ({ items }) => {
 
 interface Item {
   title: string;
-  stat: string | undefined | null;
+  stat: string;
 }
 
 export const getServerSideProps = async ({
