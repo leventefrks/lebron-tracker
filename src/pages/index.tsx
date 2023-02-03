@@ -62,8 +62,13 @@ export const getServerSideProps = async ({
   req: NextApiRequest;
   res: NextApiResponse;
 }) => {
-  const result = await fetch(baseUrl);
-  const html = await result.text();
+  const response = await fetch(baseUrl);
+
+  if (!response.ok) {
+    console.error(`Failed to fetch data`);
+  }
+
+  const html = await response.text();
 
   const dom = new JSDOM(html);
   const document = dom.window.document;
@@ -85,7 +90,7 @@ export const getServerSideProps = async ({
     'public, s-maxage=10, stale-while-revalidate=59'
   );
 
-  const items: Item[] = [
+  const items: [] = [
     {
       title: 'total',
       number: numberCast(totalPoints),
