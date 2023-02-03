@@ -8,7 +8,7 @@ Find the easter egg. Come a little bit closer and I tell you a secret. The word 
 
 ## Live version
 
-[Live Tracker](https://lebron-tracker.vercel.app)
+[Bron Live Tracker](https://lebron-tracker.vercel.app)
 
 ## Environment variables
 
