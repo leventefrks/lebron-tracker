@@ -11,7 +11,7 @@ import Title from '../components/Title';
 import ScoresGrid from '../components/ScoresGrid';
 import Social from '../components/Social';
 import Confetti from 'react-confetti';
-import { BiCoffeeTogo } from 'react-icons/bi';
+import { SiVercel } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react';
 
 const { NEXT_BASE_URL: baseUrl } = process.env;
@@ -96,17 +96,13 @@ const Home = ({ initialData, isBreakRecord = false }) => {
       </Head>
       <main className="flex min-h-screen w-full min-w-[320] items-center justify-center bg-yellow-300">
         <div className="mx-auto min-h-full w-full max-w-4xl flex-col px-4">
+          <Social />
           <Title>
-            <span className="text-6xl font-black">Bron</span> tra<span>c</span>
+            <span className="text-6xl font-black">Bron</span> tra
+            <span>c</span>
             ker
           </Title>
-          <a
-            href="https://www.buymeacoffee.com/leventefarkas"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BiCoffeeTogo className="absolute top-4 right-4 z-10 h-8 w-8 transform text-gray-800 duration-200 hover:scale-110" />
-          </a>
+
           <Image
             className="mx-auto block"
             src="/lebron-james.webp"
@@ -116,7 +112,17 @@ const Home = ({ initialData, isBreakRecord = false }) => {
           />
           <ScoresGrid items={items} />
         </div>
-        <Social />
+        {/* <a
+          href="https://vercel.com/dashboard"
+          target="_blank"
+          rel="noreferrer"
+          className="z-10 mb-2 flex items-center justify-center gap-1"
+        >
+          <SiVercel className="h-4 w-4" />
+          <span className="text-xs font-bold uppercase text-gray-800">
+            vercel
+          </span>
+        </a> */}
         <div className="absolute h-full w-full" ref={confettiRef}>
           {isRecord && <Confetti width={width} height={height} />}
         </div>
