@@ -1,18 +1,4 @@
 {
-  "overrides": [
-    {
-      "extends": [],
-      "files": ["*.js", "*.jsx"],
-      "parserOptions": {
-        "project": ""
-      }
-    }
-  ],
-  "parser": "",
-  "parserOptions": {
-    "project": ""
-  },
-  "plugins": [],
   "extends": ["next/core-web-vitals"],
   "rules": {}
 }
