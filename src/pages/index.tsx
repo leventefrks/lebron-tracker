@@ -16,7 +16,11 @@ import { BiCoffeeTogo } from 'react-icons/bi';
 
 const { NEXT_BASE_URL: baseUrl } = process.env;
 
-const Home: NextPage = ({ items }) => {
+interface Props {
+  items: [];
+}
+
+const Home: NextPage<Props> = ({ items }) => {
   return (
     <>
       <Head>
@@ -53,7 +57,7 @@ const Home: NextPage = ({ items }) => {
 
 interface Item {
   title: string;
-  number: string;
+  number: number;
 }
 
 export const getServerSideProps: GetServerSideProps<{
