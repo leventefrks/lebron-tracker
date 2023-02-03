@@ -42,7 +42,7 @@ export const getServerSideProps = async ({ req, res }) => {
   const initialProps = [
     {
       title: 'total',
-      statistics: totalPoints,
+      statistics: numberCast(totalPoints),
     },
     {
       title: 'points needed',
@@ -60,6 +60,8 @@ export const getServerSideProps = async ({ req, res }) => {
     },
   };
 };
+
+const numberCast = value => Number(value.replace(',', '')) || 0;
 
 const Home = ({ initialProps }) => {
   const [items, setItems] = useState(initialProps);
