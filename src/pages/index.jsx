@@ -87,14 +87,15 @@ const Home = ({ initialProps }) => {
       <main className="flex min-h-screen w-full min-w-[320] items-center justify-center bg-zinc-50">
         <div className="mx-auto min-h-full w-full max-w-4xl flex-col px-4">
           <Title>
-            <span className="text-6xl font-black">Bron</span> tracker
+            <span className="text-6xl font-black">Bron</span> tra<span>c</span>
+            ker
           </Title>
           <a
             href="https://www.buymeacoffee.com/leventefarkas"
             target="_blank"
             rel="noreferrer"
           >
-            <BiCoffeeTogo className="absolute top-4 right-4 h-8 w-8 transform text-gray-800 duration-200 hover:scale-110" />
+            <BiCoffeeTogo className="absolute top-4 right-4 z-10 h-8 w-8 transform text-gray-800 duration-200 hover:scale-110" />
           </a>
           <Image
             className="mx-auto block"
@@ -106,7 +107,7 @@ const Home = ({ initialProps }) => {
           <ScoresGrid items={items} />
         </div>
         <Social />
-        <div className="z-1 absolute h-full w-full" ref={confetiRef}>
+        <div className="absolute h-full w-full" ref={confetiRef}>
           {true && <Confetti width={width} height={height} />}
         </div>
       </main>

@@ -2,7 +2,7 @@ import { AiFillGithub, AiFillTwitterCircle } from 'react-icons/ai';
 
 const Social = () => {
   return (
-    <footer className="absolute top-4 left-4 flex gap-4 text-gray-800">
+    <footer className="absolute top-4 left-4 z-10 flex gap-4 text-gray-800">
       <a
         href="https://github.com/leventefrks/lebron-tracker"
         rel="noreferrer"
