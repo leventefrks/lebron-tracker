@@ -61,7 +61,7 @@ interface Item {
 }
 
 interface Props {
-  items: Item[];
+  items: Item;
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async ({
