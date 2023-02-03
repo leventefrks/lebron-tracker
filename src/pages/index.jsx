@@ -88,7 +88,10 @@ const Home = ({ initialData, isBreakRecord = false }) => {
     setWidth(confettiRef.current.clientWidth);
   }, []);
 
-  const onClickLetterC = () => setIsEasterEgg(next => !next);
+  const onClickLetterC = () => {
+    if (isRecord) return;
+    setIsEasterEgg(next => !next);
+  };
 
   return (
     <>
@@ -104,7 +107,9 @@ const Home = ({ initialData, isBreakRecord = false }) => {
             <span className="text-6xl font-black">Bron</span> tra
             <button
               onClick={onClickLetterC}
-              className="relative z-10 cursor-pointer"
+              className={`relative z-10 cursor-pointer ${
+                isRecord ? 'cursor-default' : 'cursor-pointer'
+              }`}
             >
               c
             </button>
