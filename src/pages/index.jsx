@@ -7,43 +7,9 @@ import Social from '../components/Social';
 // import Confetti from 'react-confetti';
 // import useWindowSize from 'react-use/lib/useWindowSize';
 import { BiCoffeeTogo } from 'react-icons/bi';
+import { useState } from 'react';
 
 const { NEXT_BASE_URL: baseUrl } = process.env;
-
-const Home = ({ items }) => {
-  return (
-    <>
-      <Head>
-        <title>the Bron tracker</title>
-        <meta name="description" content="The Bron tracker" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <main className="flex min-h-screen w-full min-w-[320] items-center justify-center bg-zinc-50">
-        <div className="mx-auto min-h-full w-full max-w-4xl flex-col px-4">
-          <Title>
-            <span className="text-6xl font-black">Bron</span> tracker
-          </Title>
-          <a
-            href="https://www.buymeacoffee.com/leventefarkas"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <BiCoffeeTogo className="absolute top-4 right-4 h-8 w-8 transform text-gray-800 duration-200 hover:scale-110" />
-          </a>
-          <Image
-            className="mx-auto block"
-            src="/lebron-james.webp"
-            alt="LeBron James"
-            width={340}
-            height={340}
-          />
-          <ScoresGrid items={items} />
-        </div>
-        <Social />
-      </main>
-    </>
-  );
-};
 
 export const getServerSideProps = async ({ req, res }) => {
   const response = await fetch(baseUrl);
@@ -94,6 +60,43 @@ export const getServerSideProps = async ({ req, res }) => {
       items,
     },
   };
+};
+
+const Home = ({ items }) => {
+  const [stats, setStats] = useState(items);
+
+  return (
+    <>
+      <Head>
+        <title>the Bron tracker</title>
+        <meta name="description" content="The Bron tracker" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main className="flex min-h-screen w-full min-w-[320] items-center justify-center bg-zinc-50">
+        <div className="mx-auto min-h-full w-full max-w-4xl flex-col px-4">
+          <Title>
+            <span className="text-6xl font-black">Bron</span> tracker
+          </Title>
+          <a
+            href="https://www.buymeacoffee.com/leventefarkas"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <BiCoffeeTogo className="absolute top-4 right-4 h-8 w-8 transform text-gray-800 duration-200 hover:scale-110" />
+          </a>
+          <Image
+            className="mx-auto block"
+            src="/lebron-james.webp"
+            alt="LeBron James"
+            width={340}
+            height={340}
+          />
+          <ScoresGrid items={stats} />
+        </div>
+        <Social />
+      </main>
+    </>
+  );
 };
 
 export default Home;
