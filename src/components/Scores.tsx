@@ -15,7 +15,7 @@ const Scores: React.FC<ScoresProps> = ({ item }) => {
       <div className="text-xl uppercase">{item.title}</div>
       <span className="text-4xl font-black tracking-wider">
         <CountUp start={0} end={item.number}>
-          <span>{item.number}</span>
+          {({ countUpRef }) => <span ref={countUpRef}>{item.number}</span>}
         </CountUp>
       </span>
     </li>
