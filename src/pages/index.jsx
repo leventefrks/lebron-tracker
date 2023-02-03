@@ -46,13 +46,15 @@ export const getServerSideProps = async ({ req, res }) => {
     },
     {
       title: 'points needed',
-      statistics: remainingPoints,
+      statistics: numberCast(remainingPoints),
     },
     {
       title: 'projected games',
-      statistics: remainingGames,
+      statistics: numberCast(remainingGames),
     },
   ];
+
+  // console.log('initialProps', initialProps);
 
   return {
     props: {
@@ -65,6 +67,8 @@ const numberCast = value => Number(value.replace(',', '')) || 0;
 
 const Home = ({ initialProps }) => {
   const [items, setItems] = useState(initialProps);
+
+  // console.log('client', initialProps);
 
   return (
     <>
