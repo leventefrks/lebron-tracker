@@ -60,7 +60,12 @@ interface Item {
   number: number;
 }
 
-export const getServerSideProps: GetServerSideProps<> = async ({
+interface Props {
+  items: Item[];
+}
+
+export const getServerSideProps: GetServerSideProps<Props> = async ({
+  req,
   res,
 }: {
   req: NextApiRequest;
