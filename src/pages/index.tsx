@@ -55,17 +55,7 @@ const Home: NextPage<Props> = ({ items }) => {
   );
 };
 
-interface Item {
-  title: string;
-  number: number;
-}
-
-interface Props {
-  items: [];
-}
-
-export const getServerSideProps: GetServerSideProps<Props> = async ({
-  req,
+export const getServerSideProps = async ({
   res,
 }: {
   req: NextApiRequest;
