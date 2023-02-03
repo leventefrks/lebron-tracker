@@ -56,6 +56,11 @@ const Home: NextPage<Props> = ({ items }) => {
   );
 };
 
+interface Item {
+  title: string;
+  number: string;
+}
+
 export const getServerSideProps = async ({
   res,
 }: {
@@ -90,7 +95,7 @@ export const getServerSideProps = async ({
     'public, s-maxage=10, stale-while-revalidate=59'
   );
 
-  const items: [] = [
+  const items: Item[] = [
     {
       title: 'total',
       number: numberCast(totalPoints),
