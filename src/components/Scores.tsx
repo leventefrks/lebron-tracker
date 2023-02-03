@@ -17,14 +17,14 @@ const Scores: React.FC<ScoresProps> = ({ item }) => {
     return Number(stat.replace(',', '')) || '';
   };
 
-  const stat: number = numberCast(item);
+  const statistics: number = numberCast(item);
 
   return (
     <li className="py-2 sm:py-5">
       <div className="text-xl uppercase">{item.title}</div>
       <span className="text-4xl font-black tracking-wider">
-        <CountUp start={0} end={stat}>
-          {({ countUpRef }) => <span ref={countUpRef}>{stat}</span>}
+        <CountUp start={0} end={statistics}>
+          {({ countUpRef }) => <span ref={countUpRef}>{statistics}</span>}
         </CountUp>
       </span>
     </li>
