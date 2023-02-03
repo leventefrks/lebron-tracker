@@ -47,7 +47,7 @@ const Home: NextPage<Props> = ({ items }) => {
             width={340}
             height={340}
           />
-          <ScoresGrid items={items as string[]} />
+          <ScoresGrid items={items} />
         </div>
         <Social />
       </main>
