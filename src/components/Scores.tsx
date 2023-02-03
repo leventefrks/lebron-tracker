@@ -17,7 +17,7 @@ const Scores: React.FC<ScoresProps> = ({ item }) => {
     return Number(stat.replace(',', '')) || '';
   };
 
-  const statistics: number = numberCast(item);
+  const statistics = numberCast(item);
 
   return (
     <li className="py-2 sm:py-5">
