@@ -2,7 +2,7 @@ import CountUp from 'react-countup';
 
 interface Item {
   title: string;
-  number: string;
+  number: number;
 }
 
 interface ScoresProps {

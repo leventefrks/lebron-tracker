@@ -104,6 +104,6 @@ export const getServerSideProps: GetServerSideProps<{
   };
 };
 
-const numberCast = value => Number(value.replace(',', '')) || '';
+const numberCast = (value: string) => Number(value.replace(',', '')) || '';
 
 export default Home;
