@@ -1,9 +1,4 @@
-import type {
-  NextApiRequest,
-  NextApiResponse,
-  NextPage,
-  GetServerSideProps,
-} from 'next';
+import type { NextApiRequest, NextApiResponse, NextPage } from 'next';
 import { JSDOM } from 'jsdom';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -13,6 +8,12 @@ import Social from '../components/Social';
 // import Confetti from 'react-confetti';
 // import useWindowSize from 'react-use/lib/useWindowSize';
 import { BiCoffeeTogo } from 'react-icons/bi';
+
+declare const process: {
+  env: {
+    NEXT_BASE_URL: string;
+  };
+};
 
 const { NEXT_BASE_URL: baseUrl } = process.env;
 
