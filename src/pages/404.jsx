@@ -5,7 +5,6 @@ const Scores = ({ item }) => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 px-4">
       <Image
-        className="mx-auto block"
         src="/lebron-down.webp"
         alt="LeBron James"
         width={340}
