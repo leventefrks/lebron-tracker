@@ -42,15 +42,15 @@ export const getServerSideProps = async ({ req, res }) => {
   const initialProps = [
     {
       title: 'total',
-      stat: totalPoints,
+      statistics: totalPoints,
     },
     {
       title: 'points needed',
-      stat: remainingPoints,
+      statistics: remainingPoints,
     },
     {
       title: 'projected games',
-      stat: remainingGames,
+      statistics: remainingGames,
     },
   ];
 
