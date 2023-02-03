@@ -3,7 +3,7 @@ import { BiCoffeeTogo } from 'react-icons/bi';
 
 const Social = () => {
   return (
-    <header className="relative z-10 mx-auto mb-8 flex items-center justify-between text-gray-800 md:max-w-3xl">
+    <header className="relative z-10 mx-auto mt-4 mb-8 flex items-center justify-between text-gray-800 md:max-w-3xl">
       <div className="flex gap-4">
         <a
           href="https://github.com/leventefrks/lebron-tracker"
@@ -22,7 +22,7 @@ const Social = () => {
       </div>
 
       <a
-        href="https://www.buymeacoffee.com/dashboard"
+        href="https://www.buymeacoffee.com/leventefarkas"
         rel="noreferrer"
         target="_blank"
       >

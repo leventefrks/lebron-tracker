@@ -110,7 +110,6 @@ const Home = ({ initialData, isBreakRecord = false }) => {
             </button>
             ker
           </Title>
-
           <Image
             className="mx-auto block"
             src="/lebron-james.webp"
@@ -119,18 +118,18 @@ const Home = ({ initialData, isBreakRecord = false }) => {
             height={340}
           />
           <ScoresGrid items={items} />
+          <a
+            href="https://vercel.com/"
+            target="_blank"
+            rel="noreferrer"
+            className="relative z-10 mt-24 mb-2 flex items-center justify-center gap-1"
+          >
+            <SiVercel className="h-4 w-4" />
+            <span className="text-xs font-bold uppercase text-gray-800">
+              vercel
+            </span>
+          </a>
         </div>
-        {/* <a
-          href="https://vercel.com/dashboard"
-          target="_blank"
-          rel="noreferrer"
-          className="z-10 mb-2 flex items-center justify-center gap-1"
-        >
-          <SiVercel className="h-4 w-4" />
-          <span className="text-xs font-bold uppercase text-gray-800">
-            vercel
-          </span>
-        </a> */}
         <div className="absolute h-full w-full" ref={confettiRef}>
           {(isRecord || isEasterEgg) && (
             <Confetti width={width} height={height} />
