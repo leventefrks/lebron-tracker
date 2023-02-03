@@ -15,11 +15,10 @@ export const getServerSideProps = async ({ req, res }) => {
   const response = await fetch(baseUrl);
 
   if (!response.ok) {
-    console.error(`Failed to fetch data`);
+    console.error('Failed to fetch data');
   }
 
   const html = await response.text();
-
   const dom = new JSDOM(html);
   const document = dom.window.document;
 
@@ -40,7 +39,7 @@ export const getServerSideProps = async ({ req, res }) => {
     'public, s-maxage=10, stale-while-revalidate=59'
   );
 
-  const items = [
+  const initialProps = [
     {
       title: 'total',
       stat: totalPoints,
@@ -57,13 +56,13 @@ export const getServerSideProps = async ({ req, res }) => {
 
   return {
     props: {
-      items,
+      initialProps,
     },
   };
 };
 
-const Home = ({ items }) => {
-  const [stats, setStats] = useState(items);
+const Home = ({ initialProps }) => {
+  const [items, setItems] = useState(initialProps);
 
   return (
     <>
@@ -91,7 +90,7 @@ const Home = ({ items }) => {
             width={340}
             height={340}
           />
-          <ScoresGrid items={stats} />
+          <ScoresGrid items={items} />
         </div>
         <Social />
       </main>
