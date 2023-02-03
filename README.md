@@ -4,6 +4,10 @@ When will break LeBron James Kareem Abdul Jabbar's all-time scoring record?
 Fun little project for live tracking LeBron James' career points.
 Unfortunately, I couldn't find an API so I'm scraping the data from an official sports site.
 
+## Live version
+
+[Live Tracker](https://lebron-tracker.vercel.app)
+
 ## Tech Stack 🚀
 
 - [Next.js](https://nextjs.org)

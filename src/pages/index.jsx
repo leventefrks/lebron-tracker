@@ -41,7 +41,7 @@ export const getServerSideProps = async ({ req, res }) => {
 
   const initialProps = [
     {
-      title: 'total',
+      title: 'total points',
       statistics: numberCast(totalPoints),
     },
     {
@@ -53,8 +53,6 @@ export const getServerSideProps = async ({ req, res }) => {
       statistics: numberCast(remainingGames),
     },
   ];
-
-  // console.log('initialProps', initialProps);
 
   return {
     props: {

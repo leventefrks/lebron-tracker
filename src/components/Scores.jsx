@@ -1,8 +1,6 @@
 import CountUp from 'react-countup';
 
 const Scores = ({ item }) => {
-  // console.log('item', item);
-
   return (
     <li className="py-2 sm:py-5">
       <div className="text-xl uppercase">{item.title}</div>
