@@ -14,10 +14,10 @@ const Scores: React.FC<ScoresProps> = ({ item }) => {
     if (stat === null || stat === undefined) {
       return 0;
     }
-    return Number(stat.replace(',', '')) || '';
+    return Number(stat.replace(',', '')) || 0;
   };
 
-  const statistics = numberCast(item);
+  const statistics: number = numberCast(item);
 
   return (
     <li className="py-2 sm:py-5">
