@@ -24,4 +24,4 @@ Find the easter egg. Come a little bit closer and I tell you a secret. The word 
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [React Confetti](https://www.npmjs.com/package/react-confetti)
 - [React CountUp](https://www.npmjs.com/package/react-countup)
-- [Nextjs Google Analytics](https://www.npmjs.com/package/nextjs-google-analytics)
+- [Next.js Google Analytics](https://www.npmjs.com/package/nextjs-google-analytics)
