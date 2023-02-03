@@ -78,6 +78,7 @@ const numberCast = value => Number(value.replace(',', '')) || '-';
 const Home = ({ initialData, isBreakRecord = false }) => {
   const [items, setItems] = useState(initialData);
   const [isRecord, setIsBreakRecord] = useState(isBreakRecord);
+  const [isEasterEgg, setIsEasterEgg] = useState(false);
   const [height, setHeight] = useState(null);
   const [width, setWidth] = useState(null);
   const confettiRef = useRef(null);
@@ -86,6 +87,8 @@ const Home = ({ initialData, isBreakRecord = false }) => {
     setHeight(confettiRef.current.clientHeight);
     setWidth(confettiRef.current.clientWidth);
   }, []);
+
+  const onClickLetterC = () => setIsEasterEgg(next => !next);
 
   return (
     <>
@@ -99,7 +102,12 @@ const Home = ({ initialData, isBreakRecord = false }) => {
           <Social />
           <Title>
             <span className="text-6xl font-black">Bron</span> tra
-            <span>c</span>
+            <button
+              onClick={onClickLetterC}
+              className="relative z-10 cursor-pointer"
+            >
+              c
+            </button>
             ker
           </Title>
 
@@ -124,7 +132,9 @@ const Home = ({ initialData, isBreakRecord = false }) => {
           </span>
         </a> */}
         <div className="absolute h-full w-full" ref={confettiRef}>
-          {isRecord && <Confetti width={width} height={height} />}
+          {(isRecord || isEasterEgg) && (
+            <Confetti width={width} height={height} />
+          )}
         </div>
       </main>
     </>
