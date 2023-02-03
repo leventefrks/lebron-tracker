@@ -11,7 +11,7 @@ interface ScoresProps {
 
 const Scores: React.FC<ScoresProps> = ({ item }) => {
   const numberCast = (value: { stat: string }): number =>
-    Number(value.stat.replace(',', '')) || '';
+    Number(value.stat.replace(',', '')) || 0;
 
   const stat: number = numberCast(item);
 
