@@ -12,4 +12,3 @@ Unfortunately, I couldn't find an API so I'm scraping the data from an official 
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [React Confetti](https://www.npmjs.com/package/react-confetti)
 - [React CountUp](https://www.npmjs.com/package/react-countup)
-- [Typescript](https://www.typescriptlang.org/docs/)

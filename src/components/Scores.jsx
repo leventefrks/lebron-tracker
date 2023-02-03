@@ -1,23 +1,14 @@
 import CountUp from 'react-countup';
 
-interface Item {
-  title: string;
-  stat: string;
-}
-
-interface ScoresProps {
-  item: Item;
-}
-
-const Scores: React.FC<ScoresProps> = ({ item }) => {
-  const numberCast = ({ stat }: { stat: string | null | undefined }) => {
+const Scores = ({ item }) => {
+  const numberCast = ({ stat }) => {
     if (stat === null || stat === undefined) {
       return 0;
     }
     return Number(stat.replace(',', '')) || 0;
   };
 
-  const statistics: number = numberCast(item);
+  const statistics = numberCast(item);
 
   return (
     <li className="py-2 sm:py-5">

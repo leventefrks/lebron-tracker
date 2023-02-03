@@ -1,4 +1,3 @@
-import type { NextApiRequest, NextApiResponse, NextPage } from 'next';
 import { JSDOM } from 'jsdom';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -9,19 +8,9 @@ import Social from '../components/Social';
 // import useWindowSize from 'react-use/lib/useWindowSize';
 import { BiCoffeeTogo } from 'react-icons/bi';
 
-declare const process: {
-  env: {
-    NEXT_BASE_URL: string;
-  };
-};
-
 const { NEXT_BASE_URL: baseUrl } = process.env;
 
-interface Props {
-  items: [];
-}
-
-const Home: NextPage<Props> = ({ items }) => {
+const Home = ({ items }) => {
   return (
     <>
       <Head>
@@ -56,17 +45,7 @@ const Home: NextPage<Props> = ({ items }) => {
   );
 };
 
-interface Item {
-  title: string;
-  stat: string;
-}
-
-export const getServerSideProps = async ({
-  res,
-}: {
-  req: NextApiRequest;
-  res: NextApiResponse;
-}) => {
+export const getServerSideProps = async ({ req, res }) => {
   const response = await fetch(baseUrl);
 
   if (!response.ok) {
@@ -78,15 +57,15 @@ export const getServerSideProps = async ({
   const dom = new JSDOM(html);
   const document = dom.window.document;
 
-  const totalPoints = document.querySelector<HTMLHeadingElement>(
+  const totalPoints = document.querySelector(
     `.stat__block .sub-title`
   )?.textContent;
 
-  const remainingPoints = document.querySelector<HTMLHeadingElement>(
+  const remainingPoints = document.querySelector(
     `.stat__block.info:nth-of-type(2) .stat`
   )?.textContent;
 
-  const remainingGames = document.querySelector<HTMLHeadingElement>(
+  const remainingGames = document.querySelector(
     `.stat__block.info:nth-of-type(3) .stat`
   )?.textContent;
 
@@ -95,7 +74,7 @@ export const getServerSideProps = async ({
     'public, s-maxage=10, stale-while-revalidate=59'
   );
 
-  const items: Item[] = [
+  const items = [
     {
       title: 'total',
       stat: totalPoints,
