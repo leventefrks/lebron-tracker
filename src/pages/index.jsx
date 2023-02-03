@@ -6,9 +6,8 @@ import ScoresGrid from '../components/ScoresGrid';
 import Social from '../components/Social';
 import { KAREEM_POINTS } from '../constants';
 import Confetti from 'react-confetti';
-import useWindowSize from 'react-use/lib/useWindowSize';
 import { BiCoffeeTogo } from 'react-icons/bi';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const { NEXT_BASE_URL: baseUrl } = process.env;
 
@@ -69,7 +68,14 @@ const numberCast = value => Number(value.replace(',', '')) || 0;
 
 const Home = ({ initialProps }) => {
   const [items, setItems] = useState(initialProps);
-  const { width, height } = useWindowSize();
+  const [height, setHeight] = useState(null);
+  const [width, setWidth] = useState(null);
+  const confetiRef = useRef(null);
+
+  useEffect(() => {
+    setHeight(confetiRef.current.clientHeight);
+    setWidth(confetiRef.current.clientWidth);
+  }, []);
 
   return (
     <>
@@ -99,8 +105,10 @@ const Home = ({ initialProps }) => {
           />
           <ScoresGrid items={items} />
         </div>
-        {true && <Confetti width={width} height={height} />}
         <Social />
+        <div className="z-1 absolute h-full w-full" ref={confetiRef}>
+          {true && <Confetti width={width} height={height} />}
+        </div>
       </main>
     </>
   );
