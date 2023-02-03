@@ -85,15 +85,15 @@ export const getServerSideProps: GetServerSideProps<{
   const items: Item[] = [
     {
       title: 'total',
-      number: totalPoints || '',
+      number: numberCast(totalPoints),
     },
     {
       title: 'points needed',
-      number: remainingPoints || '',
+      number: numberCast(remainingPoints),
     },
     {
       title: 'projected games',
-      number: remainingGames || '',
+      number: numberCast(remainingGames),
     },
   ];
 
@@ -103,5 +103,7 @@ export const getServerSideProps: GetServerSideProps<{
     },
   };
 };
+
+const numberCast = value => Number(value.replace(',', '')) || '';
 
 export default Home;
