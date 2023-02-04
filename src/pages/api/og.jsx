@@ -20,7 +20,7 @@ export default function () {
         <div tw="flex flex-col text-gray-800 py-2 px-6 bg-white rounded-md shadow-xl">
           <h1 tw="text-4xl font-bold mb-2">Bron tracker</h1>
           <span tw="font-bold max-w-md">
-            Are you ready to follow LeBron James record breaking?
+            Are you ready to follow LeBron James&apos; record breaking?
           </span>
         </div>
       </div>
