@@ -118,8 +118,8 @@ const Home = ({ initialData, isBreakRecord = false }) => {
           property="twitter:url"
           content="https://lebron-tracker.vercel.app"
         />
-        <meta name="twitter:title" content="tBron tracker" />
-        <meta name="twitter:description" content="TBron tracker" />
+        <meta name="twitter:title" content="Bron tracker" />
+        <meta name="twitter:description" content="Bron tracker" />
         <meta
           name="twitter:image"
           content="https://lebron-tracker.vercel.app/api/og"
