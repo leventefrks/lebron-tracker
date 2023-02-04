@@ -17,15 +17,11 @@ export default function () {
           justifyContent: 'center',
         }}
       >
-        <div tw="flex text-gray-800 items-center py-2 px-6 bg-white rounded-md shadow-xl">
-          <div tw="flex flex-col">
-            <span tw="font-bold max-w-md">
-              Are you ready to follow LeBron James' record breaking real time?
-            </span>
-          </div>
-          <h1 tw="text-4xl font-bold mb-2 flex-1 ml-4 text-center">
-            Bron tracker
-          </h1>
+        <div tw="flex flex-col text-gray-800 py-2 px-6 bg-white rounded-md shadow-xl">
+          <h1 tw="text-4xl font-bold mb-2">Bron tracker</h1>
+          <span tw="font-bold max-w-md">
+            Are you ready to follow LeBron James' record breaking?
+          </span>
         </div>
       </div>
     ),
