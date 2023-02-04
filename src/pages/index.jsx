@@ -100,7 +100,7 @@ const Home = ({ initialData, isBreakRecord = false }) => {
         <meta name="description" content="The Bron tracker" />
         <meta
           property="og:image"
-          content="https://inthepocket.tech/api/og-image?name=Next.js&stage=adopt"
+          content="https://lebron-tracker.vercel.app/api/og-image?name=Brocn&stage=tracker"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
