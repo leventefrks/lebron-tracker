@@ -98,10 +98,33 @@ const Home = ({ initialData, isBreakRecord = false }) => {
       <Head>
         <title>Bron tracker</title>
         <meta name="description" content="Bron tracker" />
+
         <meta
           property="og:image"
           content="https://lebron-tracker.vercel.app/api/og"
         />
+        <meta property="og:url" content="https://lebron-tracker.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Bron tracker" />
+        <meta property="og:description" content="Bron tracker" />
+        <meta
+          property="og:image"
+          content="https://lebron-tracker.vercel.app/api/og"
+        />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="lebron-tracker.vercel.app" />
+        <meta
+          property="twitter:url"
+          content="https://lebron-tracker.vercel.app"
+        />
+        <meta name="twitter:title" content="tBron tracker" />
+        <meta name="twitter:description" content="TBron tracker" />
+        <meta
+          name="twitter:image"
+          content="https://lebron-tracker.vercel.app/api/og"
+        />
+
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen w-full min-w-[320] items-center justify-center bg-yellow-300">
