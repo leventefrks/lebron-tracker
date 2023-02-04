@@ -4,7 +4,7 @@ When will LeBron James break Kareem Abdul Jabbar's all-time scoring record?
 Fun little project for live tracking LeBron James' career points.
 Unfortunately, I couldn't find an API so I'm scraping the data from an official sports site.
 
-Find the easter egg. Come a little bit closer and I tell you a secret. The word confetti starts with letter c.
+Find the easter egg. Come a little bit closer and I tell you a secret, the word confetti starts with letter c.
 
 ## Live version
 
