@@ -22,9 +22,7 @@ export default function () {
             <span tw="max-w-md text-light">
               How close is LeBron to the all-time scoring record?
             </span>
-            <span style={{ fontWeight: '600' }}>
-              Follow his scoring real-time!
-            </span>
+            <span tw="font-bold">Follow his scoring real-time!</span>
           </div>
           <h1 tw="text-4xl font-bold mb-2 flex-1 ml-4 text-center">
             Bron tracker
@@ -33,8 +31,8 @@ export default function () {
       </div>
     ),
     {
-      width: 960,
-      height: 600,
+      width: 1200,
+      height: 630,
     }
   );
 }
