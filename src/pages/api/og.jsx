@@ -9,7 +9,7 @@ export default function () {
     (
       <div
         style={{
-          background: '#fafafa',
+          background: '#fde047',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -17,11 +17,15 @@ export default function () {
           justifyContent: 'center',
         }}
       >
-        <div tw="flex flex-col text-gray-800 py-2 px-6 bg-white rounded-md shadow-xl">
-          <h1 tw="text-4xl font-bold mb-2">Bron tracker</h1>
-          <span tw="font-bold max-w-md">
+        <div tw="flex flex-col text-white py-2 px-6 bg-purple-800 rounded-md shadow-xl max-w-xl">
+          <h1 tw="text-5xl font-bold mb-2">Bron tracker</h1>
+          <span tw="font-bold text-2xl">
             Are you ready to follow LeBron James&apos; record breaking?
           </span>
+          <p className="text-xl">
+            Witness history being made as LeBron James breaks the all-time
+            scoring record. Follow his journey with real-time updates.
+          </p>
         </div>
       </div>
     ),
