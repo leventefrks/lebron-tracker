@@ -18,8 +18,8 @@ const Scores = ({ item }) => {
         <Image
           src="/lebron-down.webp"
           alt="LeBron James"
-          width={340}
-          height={340}
+          width={240}
+          height={240}
         />
         <p className="text-xl text-gray-800">Ooops! LeBron is down</p>
         <Link href="/" className="text-small font-black text-gray-800">
