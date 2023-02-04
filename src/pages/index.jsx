@@ -96,8 +96,8 @@ const Home = ({ initialData, isBreakRecord = false }) => {
   return (
     <>
       <Head>
-        <title>the Bron tracker</title>
-        <meta name="description" content="The Bron tracker" />
+        <title>Bron tracker</title>
+        <meta name="description" content="Bron tracker" />
         <meta
           property="og:image"
           content="https://lebron-tracker.vercel.app/api/og"
