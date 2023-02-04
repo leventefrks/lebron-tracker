@@ -25,3 +25,4 @@ Find the easter egg. Come a little bit closer and I tell you a secret. The word 
 - [React Confetti](https://www.npmjs.com/package/react-confetti)
 - [React CountUp](https://www.npmjs.com/package/react-countup)
 - [Next.js Google Analytics](https://www.npmjs.com/package/nextjs-google-analytics)
+- [Vercel Og](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation)
