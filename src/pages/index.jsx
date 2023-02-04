@@ -127,7 +127,7 @@ const Home = ({ initialData, isBreakRecord = false }) => {
             href="https://vercel.com/"
             target="_blank"
             rel="noreferrer"
-            className="relative z-10 mt-24 mb-2 flex items-center justify-center gap-1"
+            className="relative z-10 mt-20 mb-2 flex items-center justify-center gap-1"
           >
             <SiVercel className="h-4 w-4" />
             <span className="text-xs font-bold uppercase text-gray-800">
