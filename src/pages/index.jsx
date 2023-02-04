@@ -98,6 +98,10 @@ const Home = ({ initialData, isBreakRecord = false }) => {
       <Head>
         <title>the Bron tracker</title>
         <meta name="description" content="The Bron tracker" />
+        <meta
+          property="og:image"
+          content="https://inthepocket.tech/api/og-image?name=Next.js&stage=adopt"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen w-full min-w-[320] items-center justify-center bg-yellow-300">

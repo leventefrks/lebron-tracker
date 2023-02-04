@@ -8,7 +8,10 @@ const Scores = ({ item }) => {
       <Head>
         <title>the Bron tracker - 404</title>
         <meta name="description" content="The Bron tracker" />
-        <meta property="og:image" content="/public/lebron-down.webp" />
+        <meta
+          property="og:image"
+          content="https://inthepocket.tech/api/og-image?name=Next.js&stage=adopt"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center gap-4 px-4">
