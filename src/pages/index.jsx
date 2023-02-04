@@ -149,7 +149,7 @@ const Home = ({ initialData, isBreakRecord = false }) => {
             width={340}
             height={340}
           />
-          <ScoresGrid items={items} />
+          <ScoresGrid items={items} isRecord={isRecord} />
           <a
             href="https://vercel.com/"
             target="_blank"
