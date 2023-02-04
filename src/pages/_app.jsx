@@ -4,7 +4,7 @@ import '../styles/globals.css';
 const App = ({ Component, pageProps }) => {
   return (
     <>
-      <GoogleAnalytics trackPageViews />
+      <GoogleAnalytics trackPageViews={true} />
       <Component {...pageProps} />;
     </>
   );

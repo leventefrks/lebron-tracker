@@ -9,7 +9,7 @@ export default function () {
     (
       <div
         style={{
-          background: '#fde047',
+          background: '#fafafa',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -17,7 +17,7 @@ export default function () {
           justifyContent: 'center',
         }}
       >
-        <div tw="flex flex-col text-white py-2 px-6 bg-purple-800 rounded-md shadow-xl max-w-xl">
+        <div tw="flex flex-col text-gray-800 py-2 px-6 bg-white rounded-md shadow-xl max-w-xl">
           <h1 tw="text-5xl font-bold mb-2">Bron tracker</h1>
           <span tw="font-bold text-2xl">
             Are you ready to follow LeBron James&apos; record breaking?
