@@ -75,7 +75,7 @@ export const getServerSideProps = async ({ req, res }) => {
 
 const numberCast = value => Number(value.replace(',', '')) || '-';
 
-const Home = ({ initialData, isBreakRecord = false }) => {
+const Home = ({ initialData = [], isBreakRecord = false }) => {
   const [items, setItems] = useState(initialData);
   const [isRecord, setIsBreakRecord] = useState(isBreakRecord);
   const [isEasterEgg, setIsEasterEgg] = useState(false);
