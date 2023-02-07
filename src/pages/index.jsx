@@ -147,6 +147,7 @@ const Home = ({ initialData = [], isBreakRecord = false }) => {
             className="mx-auto block"
             src="/lebron-james.webp"
             alt="LeBron James"
+            priority="true"
             width={340}
             height={340}
           />
