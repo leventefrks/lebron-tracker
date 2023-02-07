@@ -9,6 +9,7 @@ const Social = () => {
           href="https://github.com/leventefrks/lebron-tracker"
           rel="noreferrer"
           target="_blank"
+          aria-label="Github"
         >
           <AiFillGithub className="h-8 w-8 transform duration-200 hover:scale-110" />
         </a>
@@ -16,6 +17,7 @@ const Social = () => {
           href="https://twitter.com/twevente_wolf"
           rel="noreferrer"
           target="_blank"
+          aria-label="Twitter"
         >
           <AiFillTwitterCircle className="h-8 w-8 transform duration-200 hover:scale-110" />
         </a>
@@ -25,6 +27,7 @@ const Social = () => {
         href="https://www.buymeacoffee.com/leventefarkas"
         rel="noreferrer"
         target="_blank"
+        aria-label="Buy Me a Coffee"
       >
         <BiCoffeeTogo className="h-8 w-8 transform duration-200 hover:scale-110" />
       </a>
