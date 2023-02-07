@@ -8,8 +8,9 @@ import { JSDOM } from 'jsdom';
 import Head from 'next/head';
 import Image from 'next/image';
 import Title from '../components/Title';
-import ScoresGrid from '../components/ScoresGrid';
 import Social from '../components/Social';
+import ScoresGrid from '../components/ScoresGrid';
+import AllTimeScorer from '../components/AllTimeScorer';
 import Confetti from 'react-confetti';
 import { SiVercel } from 'react-icons/si';
 import { useState, useEffect, useRef } from 'react';
@@ -149,7 +150,11 @@ const Home = ({ initialData = [], isBreakRecord = false }) => {
             width={340}
             height={340}
           />
-          <ScoresGrid items={items} isRecord={isRecord} />
+          {isRecord ? (
+            <AllTimeScorer scores={items[0]} />
+          ) : (
+            <ScoresGrid items={items} />
+          )}
           <a
             href="https://vercel.com/"
             target="_blank"
