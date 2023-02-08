@@ -6,7 +6,7 @@ const AllTimeScorer = ({ scores }) => {
       <div className="flex flex-col items-center">
         <div className="text-xl uppercase">{scores.title}</div>
         <div className="text-5xl font-black tracking-wider">
-          <CountUp start={0} end={scores.statistics}>
+          <CountUp start={0} end={scores.statistics} delay={0}>
             {({ countUpRef }) => (
               <span ref={countUpRef}>{scores.statistics}</span>
             )}
