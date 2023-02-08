@@ -46,8 +46,7 @@ export const getServerSideProps = async ({ req, res }) => {
   );
 
   const isBreakRecord =
-    KAREEM_POINTS < !numberCast(remainingPoints) ||
-    !numberCast(remainingPoints);
+    KAREEM_POINTS < numberCast(remainingPoints) || !numberCast(remainingPoints);
 
   const _totalPoints = numberCast(totalPoints);
   const _remainingPoints = numberCast(remainingPoints);
@@ -76,7 +75,7 @@ export const getServerSideProps = async ({ req, res }) => {
   };
 };
 
-const numberCast = value => Number(value.replace(',', '')) || 0;
+const numberCast = value => Number(value.replace(',', ''));
 
 const Home = ({ initialData = [], isBreakRecord = false }) => {
   const [items, setItems] = useState(initialData);
