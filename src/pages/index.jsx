@@ -50,7 +50,7 @@ export const getServerSideProps = async ({ req, res }) => {
   const _remainingPoints = numberCast(remainingPoints);
   const _remainingGames = numberCast(remainingGames);
   
-  const isBreakRecord = _remainingPoints === 0 || _remainingGames === 0;
+  const isBreakRecord = !_remainingPoints || !_remainingGames;
 
   const initialData = [
     {
@@ -76,7 +76,7 @@ export const getServerSideProps = async ({ req, res }) => {
 };
 
 const numberCast = value => {
-  if (value === '0') +value;
+  if (value === '0') return +value;
   return Number(value.replace(',', ''));
 
 const Home = ({ initialData = [], isBreakRecord = false }) => {
