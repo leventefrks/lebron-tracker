@@ -45,8 +45,7 @@ export const getServerSideProps = async ({ req, res }) => {
     'public, s-maxage=10, stale-while-revalidate=59'
   );
 
-  const isBreakRecord =
-    KAREEM_POINTS < numberCast(remainingPoints) || !numberCast(remainingPoints);
+  const isBreakRecord = numberCast(remainingPoints) === 0;
 
   const _totalPoints = numberCast(totalPoints);
   const _remainingPoints = numberCast(remainingPoints);
