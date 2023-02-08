@@ -45,11 +45,12 @@ export const getServerSideProps = async ({ req, res }) => {
     'public, s-maxage=10, stale-while-revalidate=59'
   );
 
-  const isBreakRecord = numberCast(remainingPoints) === 0;
-
+  
   const _totalPoints = numberCast(totalPoints);
   const _remainingPoints = numberCast(remainingPoints);
   const _remainingGames = numberCast(remainingGames);
+  
+  const isBreakRecord = _remainingPoints === 0 || _remainingGames === 0;
 
   const initialData = [
     {
@@ -74,7 +75,9 @@ export const getServerSideProps = async ({ req, res }) => {
   };
 };
 
-const numberCast = value => Number(value.replace(',', ''));
+const numberCast = value => {
+  if (value === '0') +value;
+  return Number(value.replace(',', ''));
 
 const Home = ({ initialData = [], isBreakRecord = false }) => {
   const [items, setItems] = useState(initialData);
