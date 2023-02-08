@@ -131,6 +131,11 @@ const Home = ({ initialData = [], isBreakRecord = false }) => {
 
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="absolute h-full w-full" ref={confettiRef}>
+        {(isRecord || isEasterEgg) && (
+          <Confetti width={width} height={height} />
+        )}
+      </div>
       <main className="flex min-h-screen w-full min-w-[320] items-center justify-center bg-yellow-300">
         <div className="mx-auto min-h-full w-full max-w-4xl flex-col px-4">
           <Social />
@@ -170,11 +175,6 @@ const Home = ({ initialData = [], isBreakRecord = false }) => {
               vercel
             </span>
           </a>
-        </div>
-        <div className="absolute h-full w-full" ref={confettiRef}>
-          {(isRecord || isEasterEgg) && (
-            <Confetti width={width} height={height} />
-          )}
         </div>
       </main>
     </>
