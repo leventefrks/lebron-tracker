@@ -14,7 +14,7 @@ const AllTimeScorer = ({ scores }) => {
         </div>
       </div>
       <h1 className="text-center text-3xl font-light">
-        Congratulations for becoming the NBA all-time scoring leader
+        Congratulations for becoming the NBA all-time leading scorer
       </h1>
     </div>
   );
